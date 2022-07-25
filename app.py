@@ -3,6 +3,8 @@ from markupsafe import escape
 from werkzeug.utils import redirect
 from admin.admin import admin
 
+
+
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = 'slkeflkjslk939kjldwks33kd'

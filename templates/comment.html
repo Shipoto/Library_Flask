@@ -50,10 +50,10 @@
           </li>
         </ul>
 <h2>Оставить комментарий</h2>
-        {% for msg in get_flashed_messages() %}
-        <div class="flash">{{msg}}</div>
+        {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{cat}}">{{msg}}</div>
         {% endfor %}
-        <form action="/contact" method="post" class="comcont">
+        <form action="/comment" method="post" class="comcont">
           <div class="one_third first">
             <label for="name">Name <span>*</span></label>
             <input type="text" name="name" id="name" value="" size="22" required>
@@ -63,11 +63,11 @@
             <input type="email" name="email" id="email" value="" size="22" required>
           </div>
           <div class="one_third">
-            <label for="url">Website</label>
+            <label for="url">URL</label>
             <input type="url" name="url" id="url" value="" size="22">
           </div>
           <div class="block clear">
-            <label for="comment">Your Comment</label>
+            <label for="comment">Ваш комментарий</label>
             <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
           </div>
           <div>
