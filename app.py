@@ -23,11 +23,11 @@ def gallery():
 def read_full():
     return render_template('read-full.html')
 
-@app.route('/contact', methods=["POST", "GET"])
+@app.route('/comment', methods=["POST", "GET"])
 def contact():
     if request.method == 'POST':
         flash('Сообщение отправлено', category='success')
-    return render_template('contact.html')
+    return render_template('comment.html')
 
 @app.errorhandler(404)
 def page_not_found(error):
