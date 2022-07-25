@@ -4,7 +4,6 @@ from werkzeug.utils import redirect
 from admin.admin import admin
 
 
-
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = 'slkeflkjslk939kjldwks33kd'
@@ -49,7 +48,6 @@ def login():
         session['userLogged'] = request.form['username']
         return redirect(url_for('profile', username=session['userLogged']))
     return render_template('login.html', title="Авторизация")
-
 
 @app.route('/base')
 def base():
