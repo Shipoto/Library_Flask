@@ -10,7 +10,7 @@ app.config['SECRET_KEY'] = 'slkeflkjslk939kjldwks33kd'
 
 app.register_blueprint(admin, url_prefix='/admin')
 
-lib_list = ['01.png', '01.png', '01.png', '01.png', '01.png', '01.png', '01.png']
+# lib_list = ['01.png', '01.png', '01.png', '01.png', '01.png', '01.png', '01.png']
 
 @app.route('/')
 def home_page():
@@ -22,13 +22,13 @@ def gallery():
 
 @app.route('/read-full')
 def read_full():
-    return render_template('read-full.html')
+    return render_template('book.html')
 
-@app.route('/comment', methods=["POST", "GET"])
-def contact():
-    if request.method == 'POST':
-        flash('Сообщение отправлено', category='success')
-    return render_template('comment.html')
+# @app.route('/comment', methods=["POST", "GET"])
+# def contact():
+#     if request.method == 'POST':
+#         flash('Сообщение отправлено', category='success')
+#     return render_template('comment.html')
 
 @app.errorhandler(404)
 def page_not_found(error):
@@ -48,6 +48,12 @@ def login():
         session['userLogged'] = request.form['username']
         return redirect(url_for('profile', username=session['userLogged']))
     return render_template('login.html', title="Авторизация")
+
+@app.route('/load_book', methods=["POST", "GET"])
+def load_book():
+    if request.method == 'POST':
+        flash('Книга загружена', category='success')
+    return render_template('load_book.html')
 
 @app.route('/base')
 def base():

@@ -50,11 +50,11 @@
 <!--            </article>-->
 <!--          </li>-->
 <!--        </ul>-->
-<h2>Авторизация</h2>
+<h2>Регистрация</h2>
         {% for msg in get_flashed_messages() %}
         <div class="flash">{{msg}}</div>
         {% endfor %}
-        <form action="" method="post" class="comcont">
+        <form action="/register" method="post" class="comcont">
           <div class="one_third first">
             <label for="username">Имя пользователя<span>*</span></label>
             <input type="text" name="username" id="username" value="" size="22" required>
@@ -72,10 +72,8 @@
 <!--            <textarea name="comment" id="comment" cols="25" rows="10"></textarea>-->
           </div>
           <div>
-            <input type="submit" name="submit" value="Войти">
+            <input type="submit" name="submit" value="Регистрация">
             <input type="reset" name="reset" value="Сбросить форму">
-            <input type="checkbox" name="remainme" value="Запомнить меня">  Запомнить меня
-            <p></p><a href="{{url_for('register')}}"></a>
           </div>
         </form>
         </div>

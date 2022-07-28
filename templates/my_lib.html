@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}{% endblock title %}
+{% block form %}{% endblock form %}
 {% block wrapper %}
 
 <div class="wrapper row3">
@@ -29,7 +30,10 @@
           <header class="heading">Мои книги</header>
           <ul class="nospace clear">
             <li class="one_quarter first"><a href="#"><img src="{{ url_for('static', filename='images/demo/gallery/01.png') }}" alt=""></a></li>
-            {% for l in lib_list %}
+            {% for l in books %}
+            <li class="one_quarter"><a href="#"><img src="{{ url_for('static', filename='images/demo/gallery/') }}{{ l }}" alt=""></a></li>
+            {% endfor %}
+            {% for i in books %}
             <li class="one_quarter"><a href="#"><img src="{{ url_for('static', filename='images/demo/gallery/') }}{{ l }}" alt=""></a></li>
             {% endfor %}
 <!--            <li class="one_quarter"><a href="#"><img src="{{ url_for('static', filename='images/demo/gallery/01.png') }}" alt=""></a></li>-->

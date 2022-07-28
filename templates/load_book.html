@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock title %}
+{% block form %}{% endblock form %}
+{% block wrapper %}
+<h2>Добавить Книгу</h2>
+        {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{cat}}">{{msg}}</div>
+        {% endfor %}
+        <form action="{{url_for('load_book')}}" method="post" class="comcont">
+          <div class="one_third first">
+            <label for="title">Title book <span>*</span></label>
+            <input type="text" name="book_title" id="title" value="" size="22" required>
+          </div>
+          <div class="one_third">
+            <label for="email">Mail <span>*</span></label>
+            <input type="email" name="email" id="email" value="" size="22">
+          </div>
+          <div class="one_third">
+            <label for="url">URL книги</label>
+            <input type="ur" name="url" id="url" value="" size="22">
+          </div>
+          <div class="block clear">
+            <label for="text">Содержание книги</label>
+            <textarea name="book_text" id="text" cols="25" rows="10"></textarea>
+          </div>
+          <div>
+            <input type="submit" name="submit" value="Подтвердить">
+            &nbsp;
+            <input type="reset" name="reset" value="Сбросить форму">
+          </div>
+        </form>
+        </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+{% endblock wrapper %}
