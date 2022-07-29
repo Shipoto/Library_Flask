@@ -3,26 +3,27 @@
 {% block title %}{% endblock title %}
 {% block form %}{% endblock form %}
 {% block wrapper %}
+<main class="hoc container clear">
 <h2>Добавить Книгу</h2>
         {% for cat, msg in get_flashed_messages(True) %}
         <div class="flash {{cat}}">{{msg}}</div>
         {% endfor %}
         <form action="{{url_for('load_book')}}" method="post" class="comcont">
           <div class="one_third first">
-            <label for="title">Title book <span>*</span></label>
+            <label for="title">Название книги <span>*</span></label>
             <input type="text" name="book_title" id="title" value="" size="22" required>
           </div>
           <div class="one_third">
-            <label for="email">Mail <span>*</span></label>
+            <label for="email">Mail </label>
             <input type="email" name="email" id="email" value="" size="22">
           </div>
           <div class="one_third">
-            <label for="url">URL книги</label>
+            <label for="url">URL ссылка на источник книги</label>
             <input type="ur" name="url" id="url" value="" size="22">
           </div>
           <div class="block clear">
-            <label for="text">Содержание книги</label>
-            <textarea name="book_text" id="text" cols="25" rows="10"></textarea>
+            <label for="text">Содержание книги<span>*</span></label>
+            <textarea name="book_text" id="text" cols="100" rows="10" required ></textarea>
           </div>
           <div>
             <input type="submit" name="submit" value="Подтвердить">

@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}{% endblock title %}
+{% block form %}{% endblock form %}
+{% block wrapper %}
+<main class="hoc container clear">
+<h2>Профиль</h2>
+</div>
+          <div>
+            <p><a href="{{url_for('logout')}}">Выйти из профиля</a>
+            <input type="submit" name="submit" value="Выйти">
+            <input type="reset" name="reset" value="Сбросить форму">
+            <input type="checkbox" name="remainme" value="Запомнить меня">  Запомнить меня
+            <p></p><a href="{{url_for('register')}}"></a>
+          </div>
+        </form>
+        </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+{% endblock wrapper %}
