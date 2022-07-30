@@ -48,7 +48,7 @@ Licence URI: http://www.os-templates.com/template-terms
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">БИБЛИОТЕКА</a></h1>
+      <h1><a href="/">БИБЛИОТЕКА</a></h1>
     </div>
     <div id="quickinfo" class="fl_right">
       <ul class="nospace inline">
@@ -71,12 +71,8 @@ Licence URI: http://www.os-templates.com/template-terms
       <li class="active"><a href="/">Главная</a></li>
       <li><a class="drop" href="#">Моя библиотека</a>
         <ul>
-          <li><a href="{{ url_for('my_lib') }}">Список книг</a></li>
-          <li><a href="{{ url_for('load_book') }}">Читать</a></li>
-          <li><a href="{{ url_for('register') }}">Авторизация</a></li>
-          <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-          <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-          <li><a href="pages/basic-grid.html">Basic Grid</a></li>
+          <li><a href="{{ url_for('my_lib') }}">Список общедоступных книг</a></li>
+          <li><a href="{{ url_for('my_lib') }}">Список моих книг</a></li>
         </ul>
       </li>
       <li><a class="drop" href="#">Мои книги</a>
@@ -137,7 +133,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <li class="one_third first">
         <article>
           <figure><img src="{{ url_for('static', filename='images/demo/320x220.png') }}" alt="">
-            <figcaption><a href="#">View Details &raquo;</a></figcaption>
+            <figcaption><a href="/book/seven">Читать &raquo;</a></figcaption>
           </figure>
           <div class="txtwrap">
             <h6 class="heading">Семь навыков высокоэффективных людей</h6>
@@ -148,7 +144,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <li class="one_third">
         <article>
           <figure><img src="{{ url_for('static', filename='images/demo/emoc-gib.png') }}" alt="">
-            <figcaption><a href="{{ url_for('my_lib') }}">View Details &raquo;</a></figcaption>
+            <figcaption><a href="/book/emoc">Читать &raquo;</a></figcaption>
           </figure>
           <div class="txtwrap">
             <h6 class="heading">Эмоциональная гибкость</h6>
@@ -159,7 +155,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <li class="one_third">
         <article>
           <figure><img src="{{ url_for('static', filename='images/demo/principy.png') }}" alt="">
-            <figcaption><a href="#">View Details &raquo;</a></figcaption>
+            <figcaption><a href="/book/princ">Читать &raquo;</a></figcaption>
           </figure>
           <div class="txtwrap">
             <h6 class="heading">Принцыпы</h6>
@@ -403,33 +399,33 @@ Python. Экспресс-курс
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="one_third first">
-      <h6 class="title">Ultricies turpis libero</h6>
+      <h6 class="title">Ваша личная библиотека</h6>
       <ul class="nospace linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address>
-          Street Name &amp; Number, Town, Postcode/Zip
+          Россия, Москва
           </address>
         </li>
         <li><i class="fa fa-phone"></i> +00 (123) 456 7890<br>
           +00 (123) 456 7890</li>
         <li><i class="fa fa-fax"></i> +00 (123) 456 7890</li>
-        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+        <li><i class="fa fa-envelope-o"></i> best@project.com</li>
       </ul>
     </div>
     <div class="one_third">
-      <h6 class="title">Egestas risus sed</h6>
+      <h6 class="title">Преимущества приложения</h6>
       <ul class="nospace linklist">
-        <li><a href="#">class aptent taciti sociosqu ad litora</a></li>
-        <li><a href="#">per conubia nostra inceptos himenaeos</a></li>
-        <li><a href="#">donec elit metus malesuada quis</a></li>
-        <li><a href="#">molestie convallis cursus eros donec</a></li>
-        <li><a href="#">elit turpis ornare auctor mattis feugiat</a></li>
+        <li><a href=""></a>Чтение книг на сайте</li>
+        <li><a href=""></a>Загрузка своик книг или статей</li>
+        <li><a href=""></a>Создание своей библиотеки</li>
+        <li><a href=""></a>Звуковое воспроизведение книги</li>
+        <li><a href=""></a>Регистрация на сайте</li>
       </ul>
     </div>
     <div class="one_third">
-      <h6 class="title">Ultricies eros libero</h6>
-      <p class="btmspace-30">Vitae lectus mauris dui ipsum rhoncus vitae semper quis ultrices in nibh.</p>
-      <form method="post" action="#">
+      <h6 class="title">Подписаться на новости</h6>
+      <p class="btmspace-30">Здесь вы можете подписаться на наши новости и рассылки</p>
+      <form method="" action="">
         <fieldset>
           <legend>Newsletter:</legend>
           <input class="btmspace-15" type="text" value="" placeholder="Name">

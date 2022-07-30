@@ -10,6 +10,7 @@ from forms import LoginForm, RegisterForm
 DATABASE = '/tmp/libdb.db'
 DEBUG = True
 SECRET_KEY = 'fdgfh78@#5sdoflk;jpoi;elk;s'
+MAX_CONTENT_LENGTH = 1024 * 1024
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -64,6 +65,8 @@ def load_book():
     else:
         flash('Ошибка загрузки книги', category='error')
     return render_template('load_book.html', menu=dbase.getMenu(), title='Добавление книги')
+
+
 
 @app.route('/book/<alias>')
 @login_required
@@ -125,6 +128,36 @@ def comment():
 @login_required
 def profile():
     return render_template("profile.html", menu=dbase.getMenu(), title="Профиль")
+
+@app.route('/userava')
+@login_required
+def userava():
+    img = current_user.getAvatar(app)
+    if not img:
+        return ""
+
+    h = make_response(img)
+    h.headers['Content-Type'] = 'image/png'
+    return h
+
+@app.route('/upload', methods=["POST", "GET"])
+@login_required
+def upload():
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and current_user.verifyExt(file.filename):
+            try:
+                img = file.read()
+                res = dbase.updateUserAvatar(img, current_user.get_id())
+                if not res:
+                    flash("Ошибка обновления аватара", "error")
+                flash("Аватар обновлен", "success")
+            except FileNotFoundError as e:
+                flash("Ошибка чтения файла", "error")
+        else:
+            flash("Ошибка обновления аватара", "error")
+
+    return redirect(url_for('profile'))
 
 if __name__ == "__main__":
     app.run(debug=True)
