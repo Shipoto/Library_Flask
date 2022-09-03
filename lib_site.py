@@ -9,7 +9,7 @@ from forms import LoginForm, RegisterForm
 
 DATABASE = '/tmp/libdb.db'
 DEBUG = True
-SECRET_KEY = 'fdgfh78@#5sdoflk;jpoi;elk;s'
+SECRET_KEY = 'secret_key'
 MAX_CONTENT_LENGTH = 1024 * 1024
 
 app = Flask(__name__)
